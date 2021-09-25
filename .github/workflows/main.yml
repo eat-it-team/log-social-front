@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI front
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      # ssh and docker-compose
+      - name: copy docker-compose via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          host: hackathon.rodial.pro
+          username: root
+          key: ${{ secrets.HACKATHON_SSH }}
+          rm: true
+          source: "./"
+          target: "log-social-front"
+
+      - name: executing remote ssh commands using key
+        uses: appleboy/ssh-action@master
+        with:
+          host: hackathon.rodial.pro
+          username: root
+          key: ${{ secrets.HACKATHON_SSH }}
+          script: |
+            cd log-social-front
+            docker-compose up -d
