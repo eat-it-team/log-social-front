@@ -1,0 +1,36 @@
+{
+  "name": "social-profile-udmurt",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "typescript": "^4.3.2",
+    "vite": "^2.3.8",
+    "vue-tsc": "^0.0.24",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "@types/yandex-maps": "^2.1.19",
+    "axios": "^0.21.1",
+    "chart.js": "^3.5.1",
+    "tailwindcss": "^2.2.2",
+    "vue": "^3.0.5",
+    "vue-chart-3": "^0.5.8",
+    "vue-router": "4",
+    "vue-yandex-maps": "^0.10.12"
+  }
+}
