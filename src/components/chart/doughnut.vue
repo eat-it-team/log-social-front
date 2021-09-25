@@ -1,5 +1,5 @@
 <template>
-  <DoughnutChart :chartData="data" />
+  <DoughnutChart :chartData="data" :options="options" />
 </template>
 
 <script lang="ts">
@@ -32,7 +32,16 @@ export default defineComponent({
       ],
     };
 
-    return { data };
+    const options = {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Количество людей за чертой бедности в зависимости от возраста',
+        },
+      },
+    };
+
+    return { data, options };
   },
 });
 </script>

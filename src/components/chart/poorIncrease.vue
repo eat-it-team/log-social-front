@@ -1,5 +1,5 @@
 <template>
-  <BarChart :chartData="testData" />
+  <BarChart :chartData="testData" :options="options" />
 </template>
 
 <script lang="ts">
@@ -31,7 +31,7 @@ export default defineComponent({
         },
         {
           label: 'С 1 ребёнком',
-          data: [500, 495, 490],
+          data: [500, 495, 500],
           backgroundColor: '#123E6B',
           stack: 'Stack 2',
         },
@@ -39,12 +39,23 @@ export default defineComponent({
           label: 'Без детей',
           data: [500, 495, 490],
           backgroundColor: '#97B0C4',
-          stack: 'Stack 2',
+          stack: 'Stack 3',
         },
       ],
     };
 
-    return { testData };
+    const options = {
+      scales: {
+        y: {
+          title: {
+            display: true,
+            text: 'людей'
+          }
+        }
+      },
+    };
+
+    return { testData, options };
   },
 });
 </script>

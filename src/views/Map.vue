@@ -28,7 +28,6 @@ export default defineComponent({
           zoom: 7,
           controls: [
               'zoomControl',
-              'searchControl',
               'fullscreenControl',
           ],
         });
@@ -95,7 +94,9 @@ export default defineComponent({
         this.loadYandexHeatmap();
       });
     } else {
-      this.initializeYandexHeatmap();
+      if (0 === document.getElementById('yandex-map-script').childElementCount) {
+        this.initializeYandexHeatmap();
+      }
     }
   },
 });

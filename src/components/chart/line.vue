@@ -1,5 +1,5 @@
 <template>
-  <LineChart :chartData="data" />
+  <LineChart :chartData="data" :options="options" />
 </template>
 
 <script lang="ts">
@@ -64,7 +64,18 @@ export default defineComponent({
       ]
     };
 
-    return { data };
+    const options = {
+      scales: {
+        y: {
+          title: {
+            display: true,
+            text: 'людей'
+          }
+        }
+      },
+    };
+
+    return { data, options };
   },
 });
 </script>
