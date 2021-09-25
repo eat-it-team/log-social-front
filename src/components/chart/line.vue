@@ -26,7 +26,7 @@ export default defineComponent({
 
     const datapoints = [];
     for (let i = 0; i < labels.length; i++) {
-      datapoints.push(500 - Math.round(i * Math.random() * 2));
+      datapoints.push(400 - Math.round(i * Math.random() * 2));
     }
     const datapoints2 = [];
     for (let i = 0; i < labels.length; i++) {
@@ -65,6 +65,12 @@ export default defineComponent({
     };
 
     const options = {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Мониторинг трудоустройства инвалидов',
+        },
+      },
       scales: {
         y: {
           title: {

@@ -45,6 +45,12 @@ export default defineComponent({
     };
 
     const options = {
+      plugins: {
+        title: {
+          display: true,
+          text: 'График связи бедности с количеством детей в семье',
+        },
+      },
       scales: {
         y: {
           title: {
