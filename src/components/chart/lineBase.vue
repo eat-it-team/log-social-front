@@ -11,37 +11,23 @@ Chart.register(...registerables);
 
 
 export default defineComponent({
-  name: 'lineChart',
+  name: 'lineBase',
   components: { LineChart },
   setup() {
     const DATA_COUNT = 12;
-    const labels = [
-        'Май',
-        'Июнь',
-        'Июль',
-        'Август',
-        'Сентябрь',
-        'Октябрь',
-    ];
+    const labels = [];
 
-    const datapoints = [];
-    for (let i = 0; i < labels.length; i++) {
-      datapoints.push(500 - Math.round(i * Math.random() * 2));
+    for (let i = 0; i < DATA_COUNT; ++i) {
+      labels.push(i.toString());
     }
-    const datapoints2 = [];
-    for (let i = 0; i < labels.length; i++) {
-      datapoints2.push(300 - Math.round(i * Math.random() * 3));
-    }
-    const datapoints3 = [];
-    for (let i = 0; i < labels.length; i++) {
-      datapoints3.push(280 - Math.round(i * Math.random() * 3));
-    }
-
+    const datapoints = [0, 20, 20, 60, 60, 120, NaN, 180, 120, 125, 105, 110, 170];
+    const datapoints2 = [0, 30, 25, 65, 65, 125, NaN, 185, 125, 120, 100, 115, 175];
+    const datapoints3 = [0, 40, 35, 75, 75, 135, NaN, 195, 135, 130, 110, 125, 185];
     const data = {
       labels: labels,
       datasets: [
         {
-          label: 'Общее число инвалидов',
+          label: 'Cubic interpolation (monotone)',
           data: datapoints,
           borderColor: '#77CEFF',
           fill: false,
@@ -49,14 +35,14 @@ export default defineComponent({
           tension: 0.4
         },
         {
-          label: 'Малоимущие инвалиды с признаком трудоспособности',
+          label: 'Cubic interpolation',
           data: datapoints2,
           borderColor: '#0079AF',
           fill: false,
           tension: 0.4
         },
         {
-          label: 'Безработные инвалиды с признаком трудоспособности',
+          label: 'Linear interpolation (default)',
           data: datapoints3,
           borderColor: '#123E6B',
           fill: false
