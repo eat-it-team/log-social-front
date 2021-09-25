@@ -4,6 +4,7 @@ import Dashboard from "./views/Dashboard.vue";
 import Login from "./views/LoginEsia.vue";
 import Map from "./views/Map.vue";
 import Push from "./views/Push.vue"
+import Settings from "./views/Settings.vue"
 
 const routes: RouteRecordRaw[] = [
   {
@@ -26,6 +27,11 @@ const routes: RouteRecordRaw[] = [
     path: "/push",
     name: "Push",
     component: Push,
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: Settings,
   },
 ];
 
