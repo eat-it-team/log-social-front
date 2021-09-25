@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Dashboard from "./views/Dashboard.vue";
 import Login from "./views/LoginEsia.vue";
 import Map from "./views/Map.vue";
+import Push from "./views/Push.vue"
 
 const routes: RouteRecordRaw[] = [
   {
@@ -20,6 +21,11 @@ const routes: RouteRecordRaw[] = [
     path: "/map",
     name: "Map",
     component: Map,
+  },
+  {
+    path: "/push",
+    name: "Push",
+    component: Push,
   },
 ];
 
