@@ -25,7 +25,7 @@ export default defineComponent({
         'Позднестарческий (от 84)',
       ],
       datasets: [
-        { //3D91B5 79C3E2 1F3F4C B1C7D0 9397EB D7B8FF
+        {
           data: [7, 11, 14, 19, 24, 20, 16],
           backgroundColor: ['#77CEFF', '#0079AF', '#123E6B', '#97B0C4', '#A5C8ED', '#3D91B5', '#79C3E2'],
         },
