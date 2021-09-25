@@ -4,6 +4,7 @@ WORKDIR /app
 COPY ./yarn.lock ./
 RUN yarn install
 COPY . .
+RUN yarn install
 RUN yarn build
 
 # этап production (production-stage)
