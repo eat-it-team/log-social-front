@@ -1,12 +1,12 @@
 <template>
-  <h3 class="text-gray-700 text-3xl font-medium">Тепловая карта</h3>
-  <div id="yandex-map" class="h-96 w-full"></div>
+  <div id="yandex-map" class="h-full w-full"></div>
 </template>
 
 <script lang="ts">
 import { defineComponent, markRaw } from 'vue';
 
 export default defineComponent({
+  name: "HeatMap",
   components: {
   },
   data () {
