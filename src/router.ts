@@ -5,6 +5,7 @@ import Login from "./views/LoginEsia.vue";
 import Map from "./views/Map.vue";
 import Push from "./views/Push.vue"
 import Settings from "./views/Settings.vue"
+import Registry from "./views/Registry.vue"
 
 const routes: RouteRecordRaw[] = [
   {
@@ -32,6 +33,11 @@ const routes: RouteRecordRaw[] = [
     path: "/settings",
     name: "Settings",
     component: Settings,
+  },
+  {
+    path: "/registry",
+    name: "Registry",
+    component: Registry,
   },
 ];
 
