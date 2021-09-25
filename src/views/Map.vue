@@ -29,7 +29,10 @@ export default defineComponent({
           controls: [
               'zoomControl',
               'fullscreenControl',
-          ],
+            ],
+        },
+        {
+          minZoom: 6,
         });
 
         let data = [];
