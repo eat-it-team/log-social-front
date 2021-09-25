@@ -36,4 +36,5 @@ jobs:
           key: ${{ secrets.HACKATHON_SSH }}
           script: |
             cd log-social-front
+            docker-compose build
             docker-compose up -d
