@@ -46,7 +46,7 @@ export default defineComponent({
         }
         let heatmap = new ymaps.Heatmap(data, {
           // Радиус влияния.
-          radius: 15,
+          radius: 12,
           // Нужно ли уменьшать пиксельный размер точек при уменьшении зума. False - не нужно.
           dissipating: false,
           // Прозрачность тепловой карты.
@@ -55,10 +55,10 @@ export default defineComponent({
           intensityOfMidpoint: 0.2,
           // JSON описание градиента.
           gradient: {
-            0.1: 'rgba(176, 224, 230, 0.7)',
-            0.2: 'rgba(135, 206, 235, 0.8)',
-            0.7: 'rgba(0, 191, 255, 0.9)',
-            1.0: 'rgba(30, 144, 255, 1)'
+            0.1: 'rgba(128, 255, 0, 0.25)',
+            0.2: 'rgba(255, 255, 0, 0.6)',
+            0.7: 'rgba(234, 72, 58, 0.7)',
+            1.0: 'rgba(162, 36, 25, 0.9)',
           }
         });
         heatmap.setMap(map);
