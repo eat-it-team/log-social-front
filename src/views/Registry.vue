@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { onMounted, reactive } from "vue";
 import axios from '../plugins/axios'
 
 export default {
