@@ -2,21 +2,21 @@
   <div>
     <h3 class="text-gray-700 text-3xl font-medium">Обзор статистики</h3>
 
-    <div class="mt-4 mb-20">
+    <div class="mt-4">
       <div class="flex flex-wrap -mx-6">
-        <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
+        <div class="w-full px-6 sm:w-1/2 xl:w-1/3 mb-20">
           <div>
             <poor-increase></poor-increase>
           </div>
         </div>
 
-        <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
+        <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0 mb-20">
           <div>
             <doughnut></doughnut>
           </div>
         </div>
 
-        <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+        <div class="w-full mt-6 px-6 xl:w-1/3 xl:mt-0 mb-20">
           <div>
             <line-chart></line-chart>
           </div>
@@ -25,14 +25,14 @@
     </div>
 
 
-    <div class="mt-20">
+    <div>
       <div class="flex flex-wrap -mx-6">
-        <div class="w-full px-6 xl:w-1/2">
+        <div class="w-full px-6 xl:w-1/2 mb-20">
           <div class="h-96">
             <heat-map></heat-map>
           </div>
         </div>
-        <div class="w-full px-6 xl:w-1/2">
+        <div class="w-full px-6 xl:w-1/2 mb-20">
           <div class="h-96">
             <poor-district-line></poor-district-line>
           </div>
