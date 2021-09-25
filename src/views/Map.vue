@@ -81,8 +81,9 @@ export default defineComponent({
     },
   },
   mounted() {
-    if (!document.getElementById('yandex-maps')) {
+    if (!document.getElementById('yandex-map-script')) {
       let scriptYandexMap = document.createElement("script");
+      scriptYandexMap.id = "yandex-map-script";
       scriptYandexMap.setAttribute(
           "src",
           "https://api-maps.yandex.ru/2.1/?apikey=47cdf7a3-d75c-4aed-a277-f2df8844608d&lang=ru_RU"
