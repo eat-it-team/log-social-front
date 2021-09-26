@@ -37,11 +37,10 @@ export default {
    },
    methods: {
      loadData: function() {
-       axios('http://localhost:8080/api/registry/v1/subsidy/user-subsidy-map')
-       //axios.get('api/registry/v1/subsidy/user-subsidy-map')
-         //.then(response => {
-           //console.log(response.data)
-         //}
+       axios.get('api/registry/v1/subsidy/user-subsidy-map')
+         .then(response => {
+           console.log(response.data)
+         });
      }
    }
 }
