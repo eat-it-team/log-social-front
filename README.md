@@ -39,6 +39,7 @@ sudo snap install node --classic
 git clone git@github.com:eat-it-team/log-social-front.git
 cd log-social-front
 ```
+Поменять в .env адрес сервера, для локального окружения это будет http://localhost:8080/
 
 ### Установка зависимостей проекта
 ```shell
@@ -46,13 +47,13 @@ yarn
 ```
 
 ### Запуск в режиме разработки
-```
+```shell
 yarn dev
 ```
 Фронт будет доступен по адресу http://localhost:3000/
 
 ### Запуск в production режиме
-```
+```shell
 docker-compose up -d
 ```
 Фронт будет доступен по адресу http://localhost/
@@ -60,6 +61,8 @@ docker-compose up -d
 ### CI
 GitHub Actions при изменениях в master.
 
-### Разработчики
+### Разработчики фронтовой части
 
-Родионов Алексей PHP https://t.me/rodial
+Родионов Алексей PHP
+
+Куров Владимир JAVA
