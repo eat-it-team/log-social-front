@@ -57,14 +57,15 @@
                 <td
                     class="px-6 py-4 whitespace-nowrap border-b border-gray-200"
                 >
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ u.subsidy[0].description }}
-                  </div>
-                  <div class="text-sm leading-5 text-gray-500">
-                    {{ u.subsidy[0].details.Выплата }}
+                  <div v-for="(s, index) in u.subsidy" :key="index">
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ s.description }}
+                    </div>
+                    <div class="text-sm leading-5 text-gray-500">
+                      {{ s.details.Выплата }}
+                    </div>
                   </div>
                 </td>
-
               </tr>
               </tbody>
             </table>
