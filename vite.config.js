@@ -9,6 +9,7 @@ export default defineConfig({
     proxy: {
       '/auth': 'http://hackathon.rodial.pro:8080/',
       '/register': 'http://hackathon.rodial.pro:8080/',
+      '/user-subsidy-map': 'http://hackathon.rodial.pro:8080/',
     }
   }
 })

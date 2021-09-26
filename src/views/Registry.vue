@@ -1,5 +1,24 @@
 <template>
-  <h3 class="text-gray-700 text-3xl font-medium">Реестр</h3>
+  <div>
+    <table id="firstTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Profession</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="row in rows">
+          <td>{{row.id}}</td>
+          <td>{{row.name}}</td>
+          <td>{{row.phone}}</td>
+          <td>{{row.profession}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -8,62 +27,23 @@ import axios from '../plugins/axios'
 
 export default {
   name: "Registry",
-  setup() {
-    const state = reactive({
-      items: {
-        limit: 10,
-        offset: 0,
-      },
-    });
-    onMounted(async () => {
-      // const { data } = await axios.get(`item`, {
-      //   params: {
-      //     limit: state.items.limit,
-      //     offset: state.items.offset,
-      //   },
-      // });
-      // state.items = data.data;
-    });
-
-    return { state };
-  },
-  methods: {
-    async prev() {
-      // const { data } = await axios.get(`item`, {
-      //   params: {
-      //     limit: this.state.items.limit,
-      //     offset: this.state.items.offset - this.state.items.limit,
-      //   },
-      // });
-      // this.state.items = data.data;
-    },
-
-    async next() {
-      // const { data } = await axios.get(`item`, {
-      //   params: {
-      //     limit: this.state.items.limit,
-      //     offset: this.state.items.offset + this.state.items.limit,
-      //   },
-      // });
-      // this.state.items = data.data;
-    },
-
-    async destroy(id) {
-      // const { data } = await axios.delete(`item/${id}`);
-      // console.log(data);
-      // this.update();
-    },
-
-    async update() {
-      // const { data } = await axios.get(`item`, {
-      //   params: {
-      //     limit: this.state.items.limit,
-      //     offset: this.state.items.offset,
-      //   },
-      // });
-      // this.state.items = data.data;
-    },
-  },
+   created() {
+     this.loadData()
+   },
+   data() {
+     return {
+       rows: []
+     }
+   },
+   methods: {
+     loadData: function() {
+       axios('http://localhost:8080/api/registry/v1/subsidy/user-subsidy-map')
+       //axios.get('api/registry/v1/subsidy/user-subsidy-map')
+         //.then(response => {
+           //console.log(response.data)
+         //}
+     }
+   }
 }
 </script>
 
