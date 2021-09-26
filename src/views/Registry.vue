@@ -3,18 +3,14 @@
     <table id="firstTable">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Profession</th>
+          <th>Гражданин</th>
+          <th>Субсидии</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="row in rows">
           <td>{{row.id}}</td>
           <td>{{row.name}}</td>
-          <td>{{row.phone}}</td>
-          <td>{{row.profession}}</td>
         </tr>
       </tbody>
     </table>
@@ -37,10 +33,22 @@ export default {
    },
    methods: {
      loadData: function() {
-       axios.get('api/registry/v1/subsidy/user-subsidy-map')
+       axios('api/registry/v1/subsidy/user-subsidy-map')
          .then(response => {
-           console.log(response.data)
-         });
+           var userSubsidy = response.data
+           var size = userSubsidy.length
+           var result = new Array(size)
+           for (var i = 0; i < size; i++) {
+             var user = userSubsidy[i].user
+             var citizen = user.firstName + ' ' + user.secondName + ' ' + user.lastName
+             var subsidies = userSubsidy[i].subsidy
+             var subList = ''
+             for (var j = 0; j < subsidies.length; j++) {
+               subList += (subsidies[j].description + '\n')
+             }
+             this.rows.push(citizen, subList)
+           }
+         })
      }
    }
 }
