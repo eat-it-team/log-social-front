@@ -9,8 +9,8 @@
       </thead>
       <tbody>
         <tr v-for="row in rows">
-          <td>{{row.id}}</td>
-          <td>{{row.name}}</td>
+          <td>{{row.citizen}}</td>
+          <td>{{row.subsidies}}</td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +46,8 @@ export default {
              for (var j = 0; j < subsidies.length; j++) {
                subList += (subsidies[j].description + '\n')
              }
-             this.rows.push(citizen, subList)
+             var row = {'citizen': citizen, 'subsidies': subList}
+             this.rows.push(row)
            }
          })
      }
